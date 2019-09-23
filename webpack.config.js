@@ -65,19 +65,19 @@ module.exports = {
     ]
   },
   plugins: [
-      new HtmlWebpackPlugin({
-        filename: 'index.html',
-        chunks: ['index'],
-        template: 'src/pages/index.pug'
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'second.html',
-        chunks: ['index'],
-        template: 'src/pages/second.pug'
-      }),
       new MiniCssExtractPlugin({
         filename: 'css/main.css'
       })  
       
     ]
 };
+//Generate HTML pages 
+['ui_kit'].forEach(item => {
+  module.exports.plugins.push(
+    new HtmlWebpackPlugin({
+        filename: item + '.html',
+        chunks: ['index'],
+        template: 'src/pages/' + item + '.pug'
+    })
+  )
+});
