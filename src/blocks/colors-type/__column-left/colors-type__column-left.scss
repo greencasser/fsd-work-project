@@ -1,0 +1,7 @@
+@import "../__item/color-type__item.scss";
+
+.colors-type__column-left {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
